@@ -1,3 +1,2 @@
-Godeps/_workspace
-gerty.sublime-project
-gerty.sublime-workspace
+vendor/
+react-typescript-base

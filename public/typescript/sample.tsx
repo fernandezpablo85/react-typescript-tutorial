@@ -93,6 +93,6 @@ interface CommentData {
 }
 
 ReactDOM.render(
-  <CommentBox url="/assets/js/comments.json" pollInterval={5000}/>,
+  <CommentBox url="/public/js/comments.json" pollInterval={5000}/>,
   document.getElementById('content')
 );

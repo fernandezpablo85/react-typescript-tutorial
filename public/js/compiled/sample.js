@@ -32,21 +32,21 @@ var CommentBox = (function (_super) {
             updated.push(comment);
             _this.setState({ data: updated });
         };
-        return (React.createElement("div", {"className": "commentBox"}, React.createElement("h1", null, "Comments"), React.createElement(CommentList, {"data": this.state.data}), React.createElement(CommentForm, {"onCommentSubmit": handleCommentSubmit})));
+        return (React.createElement("div", {className: "commentBox"}, React.createElement("h1", null, "Comments"), React.createElement(CommentList, {data: this.state.data}), React.createElement(CommentForm, {onCommentSubmit: handleCommentSubmit})));
     };
     return CommentBox;
-})(React.Component);
+}(React.Component));
 var CommentList = (function (_super) {
     __extends(CommentList, _super);
     function CommentList() {
         _super.apply(this, arguments);
     }
     CommentList.prototype.render = function () {
-        var nodes = this.props.data.map(function (comment) { return React.createElement(Commentt, {"author": comment.author}, comment.text); });
-        return (React.createElement("div", {"className": "commentList"}, nodes));
+        var nodes = this.props.data.map(function (comment) { return React.createElement(Commentt, {author: comment.author}, comment.text); });
+        return (React.createElement("div", {className: "commentList"}, nodes));
     };
     return CommentList;
-})(React.Component);
+}(React.Component));
 ;
 var CommentForm = (function (_super) {
     __extends(CommentForm, _super);
@@ -63,10 +63,10 @@ var CommentForm = (function (_super) {
                 _this.props.onCommentSubmit({ author: author, text: text });
             }
         };
-        return (React.createElement("form", {"className": "commentForm", "onSubmit": handleSubmit}, React.createElement("input", {"type": "text", "placeholder": "Your name", "ref": "author"}), React.createElement("input", {"type": "text", "placeholder": "Say something...", "ref": "text"}), React.createElement("input", {"type": "submit", "value": "Post"})));
+        return (React.createElement("form", {className: "commentForm", onSubmit: handleSubmit}, React.createElement("input", {type: "text", placeholder: "Your name", ref: "author"}), React.createElement("input", {type: "text", placeholder: "Say something...", ref: "text"}), React.createElement("input", {type: "submit", value: "Post"})));
     };
     return CommentForm;
-})(React.Component);
+}(React.Component));
 ;
 var Commentt = (function (_super) {
     __extends(Commentt, _super);
@@ -74,8 +74,8 @@ var Commentt = (function (_super) {
         _super.apply(this, arguments);
     }
     Commentt.prototype.render = function () {
-        return (React.createElement("div", {"className": "comment"}, React.createElement("h2", {"className": "commentAuthor"}, this.props.author), this.props.children));
+        return (React.createElement("div", {className: "comment"}, React.createElement("h2", {className: "commentAuthor"}, this.props.author), this.props.children));
     };
     return Commentt;
-})(React.Component);
-ReactDOM.render(React.createElement(CommentBox, {"url": "/assets/js/comments.json", "pollInterval": 5000}), document.getElementById('content'));
+}(React.Component));
+ReactDOM.render(React.createElement(CommentBox, {url: "/public/js/comments.json", pollInterval: 5000}), document.getElementById('content'));
