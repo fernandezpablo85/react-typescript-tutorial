@@ -1,12 +1,16 @@
 PACKAGES = $(shell go list ./... | grep -v vendor)
+VIEWS = $(wildcard views/*.html)
 
 build: install assets
 	@go fmt ${PACKAGES}
 	@go build ${PACKAGES}
 	@go vet ${PACKAGES}
 
-assets:
+bindata.go: $(VIEWS)
 	@go generate ${PACKAGES}
+	@touch $@
+
+assets: bindata.go
 
 glide.lock: glide.yaml
 	@glide update
