@@ -21,5 +21,5 @@ func main() {
 
 	address := ":8080"
 	logger.Infof("server started on %s", address)
-	http.ListenAndServe(address, router)
+	logger.Fatal(http.ListenAndServe(address, router))
 }
