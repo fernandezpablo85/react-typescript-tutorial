@@ -2,7 +2,7 @@
 // sources:
 // views/header.html
 // views/index.html
-// views/js.htm
+// views/js.html
 // DO NOT EDIT!
 
 package main
@@ -110,22 +110,22 @@ func viewsIndexHtml() (*asset, error) {
 	return a, nil
 }
 
-var _viewsJsHtm = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x9c\xcf\xc1\x0a\xc2\x30\x0c\xc6\xf1\xbb\x4f\x51\x77\x4f\xa3\x78\x9d\x7b\x02\xc1\x67\xd8\xda\x08\x19\x6d\x57\x93\x0d\x91\xd2\x77\x57\x11\x2f\x22\x0c\xbc\x06\x7e\x7f\xf2\x95\xe2\xe9\xc2\x89\x4c\x33\x6a\x53\xeb\xc6\x98\x76\x0b\x60\x4e\x3c\x48\x2f\x4c\x6a\x00\xba\xd7\x51\x9d\x70\x9e\x8d\x8a\x3b\x36\x98\x97\x21\xb0\xc3\x51\x31\xf0\xa0\x38\x5e\x17\x92\x3b\x1c\xec\xde\xee\x6c\xe4\x64\x9f\xa9\xae\xc5\x37\x59\xd5\x42\xbd\x9b\xff\x64\xe0\xa7\xf8\x83\x7e\x56\x9c\x6f\x69\xe5\x7f\x37\xc5\xcc\x81\x3c\x6a\x1f\x73\xa0\xaf\x4e\x29\x94\x7c\xad\x8f\x00\x00\x00\xff\xff\xdb\xf4\xc0\xf4\x24\x01\x00\x00")
+var _viewsJsHtml = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x9c\xcf\xc1\x0a\xc2\x30\x0c\xc6\xf1\xbb\x4f\x51\x77\x4f\xa3\x78\x9d\x7b\x02\xc1\x67\xd8\xda\x08\x19\x6d\x57\x93\x0d\x91\xd2\x77\x57\x11\x2f\x22\x0c\xbc\x06\x7e\x7f\xf2\x95\xe2\xe9\xc2\x89\x4c\x33\x6a\x53\xeb\xc6\x98\x76\x0b\x60\x4e\x3c\x48\x2f\x4c\x6a\x00\xba\xd7\x51\x9d\x70\x9e\x8d\x8a\x3b\x36\x98\x97\x21\xb0\xc3\x51\x31\xf0\xa0\x38\x5e\x17\x92\x3b\x1c\xec\xde\xee\x6c\xe4\x64\x9f\xa9\xae\xc5\x37\x59\xd5\x42\xbd\x9b\xff\x64\xe0\xa7\xf8\x83\x7e\x56\x9c\x6f\x69\xe5\x7f\x37\xc5\xcc\x81\x3c\x6a\x1f\x73\xa0\xaf\x4e\x29\x94\x7c\xad\x8f\x00\x00\x00\xff\xff\xdb\xf4\xc0\xf4\x24\x01\x00\x00")
 
-func viewsJsHtmBytes() ([]byte, error) {
+func viewsJsHtmlBytes() ([]byte, error) {
 	return bindataRead(
-		_viewsJsHtm,
-		"views/js.htm",
+		_viewsJsHtml,
+		"views/js.html",
 	)
 }
 
-func viewsJsHtm() (*asset, error) {
-	bytes, err := viewsJsHtmBytes()
+func viewsJsHtml() (*asset, error) {
+	bytes, err := viewsJsHtmlBytes()
 	if err != nil {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "views/js.htm", size: 292, mode: os.FileMode(420), modTime: time.Unix(1472429724, 0)}
+	info := bindataFileInfo{name: "views/js.html", size: 292, mode: os.FileMode(420), modTime: time.Unix(1472429724, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -183,8 +183,8 @@ func AssetNames() []string {
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
 	"views/header.html": viewsHeaderHtml,
-	"views/index.html": viewsIndexHtml,
-	"views/js.htm": viewsJsHtm,
+	"views/index.html":  viewsIndexHtml,
+	"views/js.html":     viewsJsHtml,
 }
 
 // AssetDir returns the file names below a certain
@@ -226,11 +226,12 @@ type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
 }
+
 var _bintree = &bintree{nil, map[string]*bintree{
 	"views": &bintree{nil, map[string]*bintree{
 		"header.html": &bintree{viewsHeaderHtml, map[string]*bintree{}},
-		"index.html": &bintree{viewsIndexHtml, map[string]*bintree{}},
-		"js.htm": &bintree{viewsJsHtm, map[string]*bintree{}},
+		"index.html":  &bintree{viewsIndexHtml, map[string]*bintree{}},
+		"js.html":     &bintree{viewsJsHtml, map[string]*bintree{}},
 	}},
 }}
 
@@ -280,4 +281,3 @@ func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
-
