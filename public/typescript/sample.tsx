@@ -1,4 +1,4 @@
-/// <reference path='all.d.ts' />
+/// <reference path='../../typings/index.d.ts' />
 interface Nothing {}
 class CommentBox extends React.Component<{ url: string, pollInterval: number}, CommentData> {
   constructor(){
